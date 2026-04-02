@@ -43,22 +43,22 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
     - **C. donor:** name that tells which donor mouse or human the cell is from. All TCR clones are called within donors, regardless of which treatment
     - **D. group:** tells how you want the final statistics on clone size and frequency to be calculated
         - Note this column isn’t always necessary. Often it makes sense to not contain this column and have the statistics also calculated on the donor column
-3. Prepare a vector of either locations of directories that contain cellranger all or filtered contig_annotations.csv files or the locations of the files themselves. There are two options here:
-    - **A. Vector of file locations:**
+3. Prepare a vector of either paths to directories that contain cellranger all or filtered contig_annotations.csv files or the file paths themselves. There are two options here:
+    - **A. Vector of file paths:**
         - Good if all TCR files from multiple sequencing runs are stored in one folder, and/or if the files are not called "all_contig_annotations.csv" or "filtered_contig_annotations.csv"
         - An easy way to generate this is the function `list.files()`
-        - Usage: feed the vector of file locations into file_paths, don't have anything for folders, and list `file_type == "manual"`
-    - **B. Vector of locations of directories that contain TCR contig files:**
+        - Usage: feed the vector of file paths into file_paths, don't have anything for folders, and list `file_type == "manual"`
+    - **B. Vector of paths to directories that contain TCR contig files:**
         - Good if you have multiple folders each with 1 set of TCR files. Each directory must contain a file named "all_contig_annotations.csv" or                                                         "filtered_contig_annotations.csv". There cannot be more than 1 of the file that you want to work with. This is also compatabile with standard cellranger vdj outputs.
         - An easy way to generate this is the function `list.dirs()`
-        - Usage: feed the vector of directory locations into folders, don't provide anything for file_paths, and list file_type as "all" or "filtered" depending on which file you would like.
+        - Usage: feed the vector of directory paths into folders, don't provide anything for file_paths, and list file_type as "all" or "filtered" depending on which file you would like.
             - We strongly recommend `file_type == "all"`, as ECLIPSE has customize filtering of TCR chains that retains biologically meaningful chains that are lost if `file_type == "filtered"`                 is selected. This will also include other TCR chains that are not productive (i.e. they will not contribute to antigen recognition), but the inclusion of these chains greatly                     enhances the sensitivity of clonal tracking to allow for much better clonal prediction.
             - If you are planning on cloning TCR chains or are only interested in TCR chains that are productive, use `file_type == "filtered"`
 
 
 ## Arguments
-- folders: vector of locations of directories that contain TCR files. If you use this argument, provide either "all" or "filtered" to file_type. The order should match the numbers provided in batch
-- file_paths: vector of TCR file locations. The order should match the numbers provided in batch. The files can be named whatever you would like, but they must be all_contig_annotations.csv or filtered_contig_annotations.csv format
+- folders: vector of paths to directories that contain TCR files. If you use this argument, provide either "all" or "filtered" to file_type. The order should match the numbers provided in batch
+- file_paths: vector of TCR file paths. The order should match the numbers provided in batch. The files can be named whatever you would like, but they must be all_contig_annotations.csv or filtered_contig_annotations.csv format
 - file_type: If you use file_paths, this should be "manual". If you use folders, this should be "all" or "filtered"
 - seurat_object is self explanatory
 - batch = name of column in Seurat meta.data. The column should contain numbers
