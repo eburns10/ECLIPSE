@@ -34,7 +34,7 @@ source("/path/on/computer/to/file/ECLIPSE.R")
 ```
 
 ## Prepping Input for ECLIPSE
-ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR contig files generated from `cellranger vdj`. Specifically all_contig_annotations.csv or filtered_contig_annotations.csv files
+ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR contig files generated from `cellranger vdj`. Specifically, all_contig_annotations.csv or filtered_contig_annotations.csv files.
 
 1.	Make a folder on your computer or the HPC that can be used to store a temporary file. Don’t use the same folder that has all the raw TCR files
 2.	Make the following columns in your Seurat metadata. They can be named whatever you want
@@ -57,16 +57,16 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 
 
 ## Arguments
-- folders:  
-- file_paths: vector of TCR file directories in quotes. The order should match the numbers provided in batch. These should end with “all_contig_annotations.csv”.
-- file_type: "manual"
+- folders: vector of locations of directories that contain TCR files. If you use this argument, provide either "all" or "filtered" to file_type. The order should match the numbers provided in batch
+- file_paths: vector of TCR file locations. The order should match the numbers provided in batch. The files can be named whatever you would like, but they must be all_contig_annotations.csv or filtered_contig_annotations.csv format
+- file_type: If you use file_paths, this should be "manual". If you use folders, this should be "all" or "filtered"
 - seurat_object is self explanatory
-- batch = name of column in Seurat meta.data. Should be in quotes, with the column containing numbers.
-- donor: name of column in Seurat meta.data. Should be in quotes.
+- batch = name of column in Seurat meta.data. Should be in quotes, with the column containing numbers
+- donor: name of column in Seurat meta.data. Should be in quotes
 - group: name of column in Seurat meta.data. Should be in quotes, and you probably want to provide the same column as you did for donor (unless you want to the clone sizes/frequency calculated     by some other condition
 - original_barcode: name of column in Seurat meta.data. Should be in quotes
-- write_folder: Location of a directory where you want the temporary file written. Should be in quotes and not the same directory that has the original TCR files.
-- format: Ignore this unsure you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`.
+- write_folder: Location of a directory where you want the temporary file written. Should be in quotes and not the same directory that has the original TCR files
+- format: Ignore this unsure you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`
 
 
 
