@@ -60,8 +60,8 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 - folders: vector of paths to directories that contain TCR files. If you use this argument, provide either "all" or "filtered" to file_type. The order should match the numbers provided in batch
 - file_paths: vector of TCR file paths. The order should match the numbers provided in batch. The files can be named whatever you would like, but they must be all_contig_annotations.csv or filtered_contig_annotations.csv format
 - file_type: If you use file_paths, this should be "manual". If you use folders, this should be "all" or "filtered"
-- seurat_object is self explanatory
-- batch = name of column in Seurat meta.data. The column should contain numbers
+- seurat_object: self explanatory
+- batch: name of column in Seurat meta.data. The column should contain numbers
 - donor: name of column in Seurat meta.data
 - group: name of column in Seurat meta.data. You probably want to provide the same column as you did for donor (unless you want to the clone sizes/frequency calculated by some other condition)
 - original_barcode: name of column in Seurat meta.data
