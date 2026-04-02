@@ -37,11 +37,11 @@ source("/path/on/computer/to/file/ECLIPSE.R")
 1.	Have your scRNA-seq data as a Seurat object
 2.	Make a folder on your computer or the HPC that can be used to store a temporary file. Don’t use the same folder that has all the raw TCR files
 3.	Make the following columns in your Seurat metadata. They can be named whatever you want
-    a.	Original barcode: the barcode present in the TCR files and raw RNA files. Needs to start with the 16 nucleotide sequence and have -1 at the end with nothing before or behind either
-    b.	Index or sample number: tells which TCR file in the vector of folders/files provided to ECLIPSE has the TCR information for each cell. This needs to be a number, i.e. 1 but not “1”, and the         order of files in the vector should match this number
-    c.	donor: name that tells which donor mouse or human the cell is from. All TCR clones are called within donors, regardless of which treatment
-    d.	group: tells how you want the final statistics on clone size and frequency to be calculated
-        i.	Note this column isn’t always necessary. Often it makes sense to not contain this column and have the statistics also calculated on the donor column
+    - Original barcode: the barcode present in the TCR files and raw RNA files. Needs to start with the 16 nucleotide sequence and have -1 at the end with nothing before or behind either
+    - Index or sample number: tells which TCR file in the vector of folders/files provided to ECLIPSE has the TCR information for each cell. This needs to be a number, i.e. 1 but not “1”, and the         order of files in the vector should match this number
+    - donor: name that tells which donor mouse or human the cell is from. All TCR clones are called within donors, regardless of which treatment
+    - group: tells how you want the final statistics on clone size and frequency to be calculated
+        - Note this column isn’t always necessary. Often it makes sense to not contain this column and have the statistics also calculated on the donor column
 
 
 ### Arguments
