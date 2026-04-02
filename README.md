@@ -66,7 +66,7 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 - group: name of column in Seurat meta.data. You probably want to provide the same column as you did for donor (unless you want to the clone sizes/frequency calculated by some other condition)
 - original_barcode: name of column in Seurat meta.data
 - write_folder: path to a directory where you want the temporary file written. Shouldn't be the same directory that has the original TCR files
-- format: Ignore this unsure you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`
+- format: Ignore this unless you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`
 
 ## tcrDoubletDetect Function Arguments
 - object: Seurat object
