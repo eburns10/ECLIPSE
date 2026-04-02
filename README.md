@@ -70,9 +70,9 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 
 ## tcrDoubletDetect Function Arguments
 - object: Seurat object
-- filter: by default TRUE, FALSE will not remove any cells and instead only visualizes nCountRNA vs. TCR chain count.
-- singleChainCount: 2 by default. This is the maximum number of TCR alpha or TCR chains that be in each cell. If cells have more than this amount, they will be filtered out.
-- totalChainCount: no default threshold. This is the maximum number of total TCR chains (alpha + beta) that can be in each cell. If cells have more than this amount, they will be filtered out.
+- filter: by default TRUE, FALSE will not remove any cells and instead only visualizes nCountRNA vs. TCR chain count
+- singleChainCount: 2 by default. This is the maximum number of TCR alpha or TCR chains that be in each cell. If cells have more than this amount, they will be filtered out
+- totalChainCount: no default threshold. This is the maximum number of total TCR chains (alpha + beta) that can be in each cell. If cells have more than this amount, they will be filtered out
 
 
 ## Example Code
