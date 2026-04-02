@@ -51,7 +51,7 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
     - **B. Vector of paths to directories that contain TCR contig files:**
         - Good if you have multiple folders each with 1 set of TCR files. Each directory must contain a file named "all_contig_annotations.csv" or                                                         "filtered_contig_annotations.csv". There cannot be more than 1 of the file that you want to work with. This is also compatabile with standard cellranger vdj outputs.
         - An easy way to generate this is the function `list.dirs()`
-        - Usage: feed the vector of directory paths into folders, don't provide anything for file_paths, and list file_type as "all" or "filtered" depending on which file you would like.
+        - Usage: feed the vector of directory paths into folders, don't provide anything for file_paths, and have `file_type == "all"` or `file_type == "filtered"` depending on which file you would like.
             - We strongly recommend `file_type == "all"`, as ECLIPSE has customize filtering of TCR chains that retains biologically meaningful chains that are lost if `file_type == "filtered"`                 is selected. This will also include other TCR chains that are not productive (i.e. they will not contribute to antigen recognition), but the inclusion of these chains greatly                     enhances the sensitivity of clonal tracking to allow for much better clonal prediction.
             - If you are planning on cloning TCR chains or are only interested in TCR chains that are productive, use `file_type == "filtered"`
 
