@@ -17,7 +17,23 @@ ECLIPSE and its partner, VDJdive, are desribed in detail in our pre-print on bio
 The ECLIPSE package contains 3 functions:
 1. ECLIPSE: Used for running scTCR-seq analysis.
 2. findThreeChainClones: A helper function that finds and notes T cell clones that possess 2 alpha or 2 beta chains.
-3. tcrDoubletDetect: Based on the ouput of ECLIPSE, this function then can be used to remove clones that possess more chains than desired.
+3. tcrDoubletDetect: Based on the ouput of ECLIPSE, this function then can be used to remove cells that possess more chains than desired.
+
+
+## Setup
+1. Install [VDJdive](https://bioconductor.org/packages/release/bioc/html/VDJdive.html).
+2. Install [scRepertoire](https://www.bioconductor.org/packages/release/bioc/html/scRepertoire.html).
+3. Move “ECLIPSE.R” file onto your computer or HPC
+4. Load in the required packages and code
+```
+library(tidyverse)
+library(Seurat)
+library(scRepertoire)
+library(VDJdive)
+source("/path/on/computer/to/file/ECLIPSE.R")
+```
+
+## Prepping Input for ECLIPSE
 
 
 
