@@ -34,20 +34,21 @@ source("/path/on/computer/to/file/ECLIPSE.R")
 ```
 
 ## Prepping Input for ECLIPSE
-1.	Have your scRNA-seq data as a Seurat object
-2.	Make a folder on your computer or the HPC that can be used to store a temporary file. Don’t use the same folder that has all the raw TCR files
-3.	Make the following columns in your Seurat metadata. They can be named whatever you want
+ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR contig files generated from `cellranger vdj`. Specifically all_contig_annotations.csv or filtered_contig_annotations.csv files
+
+1.	Make a folder on your computer or the HPC that can be used to store a temporary file. Don’t use the same folder that has all the raw TCR files
+2.	Make the following columns in your Seurat metadata. They can be named whatever you want
     - **A. Original barcode:** the barcode present in the TCR files and raw RNA files. Needs to start with the 16 nucleotide sequence and have -1 at the end with nothing before or behind either
     - **B. Index or sample number:** tells which TCR file in the vector of folders/files provided to ECLIPSE has the TCR information for each cell. This needs to be a number, i.e. 1 but not “1”,             and the order of files in the vector should match this number
     - **C. donor:** name that tells which donor mouse or human the cell is from. All TCR clones are called within donors, regardless of which treatment
     - **D. group:** tells how you want the final statistics on clone size and frequency to be calculated
         - Note this column isn’t always necessary. Often it makes sense to not contain this column and have the statistics also calculated on the donor column
-4. Prepare a vector of either locations of directories that contain cellranger all or filtered contig_annotations.csv files or the locations of the files themselves. There are two options here:
+3. Prepare a vector of either locations of directories that contain cellranger all or filtered contig_annotations.csv files or the locations of the files themselves. There are two options here:
     - **A. Vector of file locations:**
         - Good if all TCR files from multiple sequencing runs are stored in 1 folder, and/or if the files are not called "all_contig_annotations.csv" or "filtered_contig_annotations.csv"
         - An easy way to generate this is the function `list.files()`
         - Usage: feed the vector of file locations into file_paths, don't have anything for folders, and list `file_paths == "manual"`
-    - **B. Vector of directory locations:**
+    - **B. Vector of locations of directories that contain TCR contig files:**
         - Good if you have a bunch of folders each with 1 set of TCR files. Each directory must contain a file named "all_contig_annotations.csv" or                                                         "filtered_contig_annotations.csv". There cannot be more than 1 of the file that you want to work with. This is also compatabile with standard cellrange vdj outputs.
         - An easy way to generate this is the function `list.dirs()`
         - Usage: feed the vector of directory locations into folders, don't provide anything for file_paths, and list file_type as "all" or "filtered" depending on which file you would like.
@@ -55,8 +56,8 @@ source("/path/on/computer/to/file/ECLIPSE.R")
             - If you are planning on cloning TCR chains or are only interested in TCR chains that are productive, use `file_type == "filtered"`
 
 
-### Arguments
-- folders: 
+## Arguments
+- folders:  
 - file_paths: vector of TCR file directories in quotes. The order should match the numbers provided in batch. These should end with “all_contig_annotations.csv”.
 - file_type: "manual"
 - seurat_object is self explanatory
