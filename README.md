@@ -65,18 +65,18 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 - donor: name of column in Seurat meta.data
 - group: name of column in Seurat meta.data. You probably want to provide the same column as you did for donor (unless you want to the clone sizes/frequency calculated by some other condition)
 - original_barcode: name of column in Seurat meta.data
-- write_folder: Location of a directory where you want the temporary file written. Shouldn't be the same directory that has the original TCR files
+- write_folder: path to a directory where you want the temporary file written. Shouldn't be the same directory that has the original TCR files
 - format: Ignore this unsure you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`
 
 
 ## Example Code
-Option 1 (using vector of locations of folders containg contig files):
+Option 1 (using vector of paths to folders containg contig files):
 ```
 cd8_tcr <- ECLIPSE(folders = tcr_folders, file_type = "all", seurat_object = cd8, batch = "index", donor = "patient", group = "patient", original_barcode = "orig_barcode", write_folder = "home/desktop/path/to/folder/")
 cd8_tcr <- tcrDoubletDetect(cd8_tcr, singleChainLimit = 2, totalChainLimit = 4)
 ```
 
-Option 2 (using vector of locations of contig files):
+Option 2 (using vector of paths to contig files):
 ```
 cd8_tcr <- ECLIPSE(file_paths = tcr_files, file_type = "manual", seurat_object = cd8, batch = "index", donor = "patient", group = "patient", original_barcode = "orig_barcode", write_folder = "home/desktop/path/to/folder/")
 cd8_tcr <- tcrDoubletDetect(cd8_tcr, singleChainLimit = 2, totalChainLimit = 4)
