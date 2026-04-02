@@ -1,11 +1,11 @@
 # ECLIPSE: Enhanced CLonal Inference via Prediction of Single-cell Expression
-This repo contains the code for the R package ECLIPSE used for single-cell TCR sequencing (scTCR-seq) analysis.
+This repo contains the code for the R package ECLIPSE used for single-cell TCR sequencing (scTCR-seq) analysis
 
 ### Issues/Comments
-Please reach out to Ethan Burns (ethan.burns [@] yale.edu) and David Braun (david.braun [@] yale.edu).
+Please reach out to Ethan Burns (ethan.burns [@] yale.edu) and David Braun (david.braun [@] yale.edu)
 
 ### Manuscript
-ECLIPSE and its partner, VDJdive, are described in detail in our pre-print on bioRxiv: "VDJdive and ECLIPSE enhance single-cell TCR sequencing analysis through the probabilistic resolution of ambiguous clonotypes" available [here](https://doi.org/10.64898/2026.02.18.706444).  
+ECLIPSE and its partner, VDJdive, are described in detail in our pre-print on bioRxiv: "VDJdive and ECLIPSE enhance single-cell TCR sequencing analysis through the probabilistic resolution of ambiguous clonotypes" available [here](https://doi.org/10.64898/2026.02.18.706444)
 
 
 
@@ -15,14 +15,14 @@ ECLIPSE and its partner, VDJdive, are described in detail in our pre-print on bi
 
 ## Basics:
 The ECLIPSE package contains 3 functions:
-1. **ECLIPSE:** Used for running scTCR-seq analysis.
-2. **findThreeChainClones:** A helper function that finds and notes T cell clones that possess 2 alpha or 2 beta chains.
-3. **tcrDoubletDetect:** Based on the ouput of ECLIPSE, this function then can be used to remove cells that possess more chains than desired.
+1. **ECLIPSE:** Used for running scTCR-seq analysis
+2. **findThreeChainClones:** A helper function that finds and notes T cell clones that possess 2 alpha or 2 beta chains
+3. **tcrDoubletDetect:** Based on the ouput of ECLIPSE, this function then can be used to remove cells that possess more chains than desired
 
 
 ## Setup
-1. Install [VDJdive](https://bioconductor.org/packages/release/bioc/html/VDJdive.html).
-2. Install [scRepertoire](https://www.bioconductor.org/packages/release/bioc/html/scRepertoire.html).
+1. Install [VDJdive](https://bioconductor.org/packages/release/bioc/html/VDJdive.html)
+2. Install [scRepertoire](https://www.bioconductor.org/packages/release/bioc/html/scRepertoire.html)
 3. Move “ECLIPSE.R” file onto your computer or HPC
 4. Load in the required packages and code
 ```
@@ -34,7 +34,7 @@ source("/path/on/computer/to/file/ECLIPSE.R")
 ```
 
 ## Prepping Input for ECLIPSE
-ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR contig files generated from `cellranger vdj`. Specifically, all_contig_annotations.csv or filtered_contig_annotations.csv files.
+ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR contig files generated from `cellranger vdj`. Specifically, all_contig_annotations.csv or filtered_contig_annotations.csv files
 
 1.	Make a folder on your computer that can be used to store a temporary file. Don’t use the same folder that has all the raw TCR files
 2.	Make the following columns in your Seurat meta.data. They can be named whatever you want
