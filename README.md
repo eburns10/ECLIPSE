@@ -56,16 +56,16 @@ source("/path/on/computer/to/file/ECLIPSE.R")
 
 
 ### Arguments
-- folders
-- file_paths = vector of TCR file directories in quotes. The order should match the numbers provided in batch. These should end with “all_contig_annotations.csv”.
-- file_type = "manual"
+- folders: 
+- file_paths: vector of TCR file directories in quotes. The order should match the numbers provided in batch. These should end with “all_contig_annotations.csv”.
+- file_type: "manual"
 - seurat_object is self explanatory
-- batch = name of column in meta data that you made. Should be in quotes, with the column containing numbers.
-- donor = name of column in meta data that you made. Should be in quotes.
-- group = name of column in meta data that you made. Should be in quotes, and you probably want to provide the same column as you did for donor.
-- original_barcode = name of column in meta data that you made. Should be in quotes
-- write_folder = Directory where you want the temporary file written. Should be in quotes
-- format = Ignore this typically. 
+- batch = name of column in Seurat meta.data. Should be in quotes, with the column containing numbers.
+- donor: name of column in Seurat meta.data. Should be in quotes.
+- group: name of column in Seurat meta.data. Should be in quotes, and you probably want to provide the same column as you did for donor (unless you want to the clone sizes/frequency calculated     by some other condition
+- original_barcode: name of column in Seurat meta.data. Should be in quotes
+- write_folder: Location of a directory where you want the temporary file written. Should be in quotes and not the same directory that has the original TCR files.
+- format: Ignore this unsure you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`.
 
 
 
