@@ -56,7 +56,7 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
             - If you are planning on cloning TCR chains or are only interested in TCR chains that are productive, use `file_type == "filtered"`
 
 
-## Arguments
+## ECLIPSE Function Arguments
 - folders: vector of paths to directories that contain TCR files. If you use this argument, provide either "all" or "filtered" to file_type. The order should match the numbers provided in batch
 - file_paths: vector of TCR file paths. The order should match the numbers provided in batch. The files can be named whatever you would like, but they must be all_contig_annotations.csv or filtered_contig_annotations.csv format
 - file_type: If you use file_paths, this should be "manual". If you use folders, this should be "all" or "filtered"
@@ -67,6 +67,12 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 - original_barcode: name of column in Seurat meta.data
 - write_folder: path to a directory where you want the temporary file written. Shouldn't be the same directory that has the original TCR files
 - format: Ignore this unsure you are using older TCR contig files that store blank data as "None" instead of "". If this is the case, list `format = "None"`
+
+## tcrDoubletDetect Function Arguments
+- object: Seurat object
+- filter: by default TRUE, FALSE will not remove any cells and instead only visualizes nCountRNA vs. TCR chain count.
+- singleChainCount: 2 by default. This is the maximum number of TCR alpha or TCR chains that be in each cell. If cells have more than this amount, they will be filtered out.
+- totalChainCount: no default threshold. This is the maximum number of total TCR chains (alpha + beta) that can be in each cell. If cells have more than this amount, they will be filtered out.
 
 
 ## Example Code
