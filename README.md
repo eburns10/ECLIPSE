@@ -45,14 +45,14 @@ source("/path/on/computer/to/file/ECLIPSE.R")
 4. Prepare a vector of either locations of directories that contain cellranger all or filtered contig_annotations.csv files or the locations of the files themselves. There are two options here:
     - **A. Vector of file locations:**
         - Good if all TCR files from multiple sequencing runs are stored in 1 folder, and/or if the files are not called "all_contig_annotations.csv" or "filtered_contig_annotations.csv"
-        - An easy way to generate this is the function > list.files()
-        - Usage: feed the vector of file locations into file_paths, don't have anything for folders, and list > file_paths == "manual"
+        - An easy way to generate this is the function `list.files()`
+        - Usage: feed the vector of file locations into file_paths, don't have anything for folders, and list `file_paths == "manual"`
     - **B. Vector of directory locations:**
         - Good if you have a bunch of folders each with 1 set of TCR files. Each directory must contain a file named "all_contig_annotations.csv" or                                                         "filtered_contig_annotations.csv". There cannot be more than 1 of the file that you want to work with. This is also compatabile with standard cellrange vdj outputs.
-        - An easy way to generate this is the function > list.dirs()
+        - An easy way to generate this is the function `list.dirs()`
         - Usage: feed the vector of directory locations into folders, don't provide anything for file_paths, and list file_type as "all" or "filtered" depending on which file you would like.
-            - We strongly recommend "all", as ECLIPSE has customize filtering of TCR chains that retains biologically meaningful chains that are lost if "filtered" is selected. This will include               TCR chains that are not productive (i.e. they will not contribute to antigen recognition), but the inclusion of these chains greatly enhances the sensitivity of clonal tracking to                allow for much better clonal prediction.
-            - If you are planning on cloning TCR chains or are only interested in TCR chains that are productive, use "filtered"
+            - We strongly recommend `file_type == "all"`, as ECLIPSE has customize filtering of TCR chains that retains biologically meaningful chains that are lost if file_type == "filtered"`                 is selected. This will include TCR chains that are not productive (i.e. they will not contribute to antigen recognition), but the inclusion of these chains greatly                                enhances the sensitivity of clonal tracking to allow for much better clonal prediction.
+            - If you are planning on cloning TCR chains or are only interested in TCR chains that are productive, use `file_type == "filtered"`
 
 
 ### Arguments
