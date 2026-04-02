@@ -45,7 +45,7 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
         - Note this column isn’t always necessary. Often it makes sense to not contain this column and have the statistics also calculated on the donor column
 3. Prepare a vector of either locations of directories that contain cellranger all or filtered contig_annotations.csv files or the locations of the files themselves. There are two options here:
     - **A. Vector of file locations:**
-        - Good if all TCR files from multiple sequencing runs are stored in 1 folder, and/or if the files are not called "all_contig_annotations.csv" or "filtered_contig_annotations.csv"
+        - Good if all TCR files from multiple sequencing runs are stored in one folder, and/or if the files are not called "all_contig_annotations.csv" or "filtered_contig_annotations.csv"
         - An easy way to generate this is the function `list.files()`
         - Usage: feed the vector of file locations into file_paths, don't have anything for folders, and list `file_paths == "manual"`
     - **B. Vector of locations of directories that contain TCR contig files:**
