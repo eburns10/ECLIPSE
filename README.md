@@ -70,12 +70,14 @@ ECLIPSE requires two inputs: a Seurat object containing scRNA-seq data, and TCR 
 
 
 ## Example Code
+Option 1 (using vector of locations of folders containg contig files):
 ```
 cd8_tcr <- ECLIPSE(folders = tcr_folders, file_type = "all", seurat_object = cd8, batch = "index", donor = "patient", group = "patient", original_barcode = "orig_barcode", write_folder = "home/desktop/path/to/folder/")
 cd8_tcr <- tcrDoubletDetect(cd8_tcr, singleChainLimit = 2, totalChainLimit = 4)
+```
 
-### OR
-
+Option 2 (using vector of locations of contig files):
+```
 cd8_tcr <- ECLIPSE(file_paths = tcr_files, file_type = "manual", seurat_object = cd8, batch = "index", donor = "patient", group = "patient", original_barcode = "orig_barcode", write_folder = "home/desktop/path/to/folder/")
 cd8_tcr <- tcrDoubletDetect(cd8_tcr, singleChainLimit = 2, totalChainLimit = 4)
 ```
