@@ -39,7 +39,7 @@ ECLIPSE requires two main data inputs: a Seurat object containing scRNA-seq data
 1.	Make a folder on your computer that can be used to store a temporary file. Don’t use the same folder that has all the raw TCR files
 2.	Make the following columns in your Seurat meta.data. They can be named whatever you want
     - **A. original barcode:** the barcode present in the TCR files and raw RNA files. Needs to start with the 16 nucleotide sequence and have -1 at the end with nothing before or behind either
-    - **B. batch:** tells which TCR file in the vector of folders/files provided to ECLIPSE has the TCR information for each cell. This needs to be a number, i.e. 1 but not “1”, and the order of files in the vector should match this number. For example, any cell listed as 1 in the column should have matched TCR data in the 1st position of the TCR file/folder path vector that is fed to folders/file_paths
+    - **B. batch:** tells which TCR file in the vector of folders/files provided to ECLIPSE has the TCR information for each cell. This needs to be a number, i.e. 1 but not “1”, and the order of files in the vector should match this number. For example, any cell listed as 1 in the column should have matched TCR data in the contig file whose path is found in the 1st element of the TCR file/folder path vector that is fed to folders/file_paths
     - **C. donor:** name that tells which donor mouse or human the cell is from. All TCR clones are called within donors, regardless of which treatment
     - **D. group:** tells how you want the final statistics on clone size and frequency to be calculated
         - Note this column isn’t always necessary. Often it makes sense to not contain this column and have the statistics also calculated on the donor column
