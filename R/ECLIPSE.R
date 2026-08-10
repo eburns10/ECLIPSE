@@ -5,6 +5,7 @@
 #' chains lost to sequencing dropout and to decipher whether cells with >2
 #' total TCR chains are caused by technical artifacts or true biology.
 #'
+#' @param seurat_object Seurat object that contains scRNA-seq data.
 #' @param contig_folder_paths vector of paths to directories that contain TCR
 #' files. If you use this argument, provide either "all" or "filtered" to
 #' contig_type. The order should match the numbers provided in batch.
@@ -16,7 +17,6 @@
 #' the numbers provided in batch. The files can have any name, but they must
 #' be all_contig_annotations.csv or
 #' filtered_contig_annotations.csv format.
-#' @param seurat_object Seurat object that contains scRNA-seq data.
 #' @param batch name of column in Seurat meta.data. The column should contain
 #' integers, not characters, that tell which position in the
 #' contig_folder/file_path vectors contains the TCR contigs for the cell.
@@ -62,19 +62,19 @@
 #'                 pattern = "\\.csv.gz$",
 #'                 full.names = TRUE)
 #'
-#' cd8_tcr <- ECLIPSE(contig_file_paths = tcr_paths,
+#' cd8_tcr <- ECLIPSE(test_seurat,
+#'                     contig_file_paths = tcr_paths,
 #'                     contig_type = "manual",
-#'                     seurat_object = test_seurat,
 #'                     batch = "index",
 #'                     donor = "donor",
 #'                     group = "donor",
 #'                     original_barcode = "Cell_Barcode")
 #'
 #' @export
-ECLIPSE <- function(contig_type = "all",
+ECLIPSE <- function(seurat_object,
+                    contig_type = "all",
                     contig_folder_paths = NULL,
                     contig_file_paths = NULL,
-                    seurat_object,
                     batch,
                     donor,
                     group,
