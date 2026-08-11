@@ -1,4 +1,4 @@
-# ECLIPSE
+# ECLIPSE: Enhanced CLonotypic Inference via Prediction of Single-cell Expression
 ECLIPSE is a novel method of scTCR-seq analysis that can predict the 
 clonotypes of T cells possessing >2 or only 1 TCR chain. These populations of 
 cells, which can represent >50% of cells in some samples, are not well 
