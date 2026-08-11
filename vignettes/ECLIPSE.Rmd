@@ -41,7 +41,8 @@ TCRα and TCRβ chains. However, as >50% of cells in some samples
 possess only 1 or >2 TCR chains, this approach is ill-suited to interpret the 
 clonotypes of a substantial proportion of cells.
 
-ECLIPSE was developed to address this limitation of standard scTCR-seq 
+ECLIPSE, building off of `r Biocpkg("VDJdive")`, was developed to address 
+this limitation of standard scTCR-seq 
 analysis. By analyzing chain pairings across a sample, it is able to resolve 
 clonal ambiguity, allowing for the prediction of chains lost of dropout and the 
 deciphering of true biological expression of extra TCR chains from technical 
