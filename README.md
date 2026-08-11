@@ -9,7 +9,7 @@ biology vs. sequencing artifacts. Together this leads to larger clone sizes
 and less cells without a clonotype assignment, allowing users to make best use 
 of their scTCR-seq data.
 
-### Authors
+### Authors/Contributors
 Ethan C. Burns, Zhaochen Ye, Kelly Street, and David A. Braun
 
 ### Installation
