@@ -14,7 +14,7 @@ Ethan C. Burns, Zhaochen Ye, Kelly Street, and David A. Braun
 
 ### Installation
 To download the development version of ECLIPSE, please run:
-``` r
+```{r, eval = FALSE}
 remotes::install_github("eburns10/ECLIPSE")
 ```
 
@@ -26,7 +26,7 @@ through the probabilistic resolution of ambiguous clonotypes" available
 
 ### Issues
 Please use our issues 
-[page](https://github.com/eburns10/ECLIPSE_bioconductor_submission/issues) or 
+[page](https://github.com/eburns10/ECLIPSE/issues) or 
 email ethan.burns [@] yale.edu
 
 ### How to use
