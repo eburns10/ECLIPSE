@@ -19,10 +19,9 @@ Imports:
     VDJdive,
     methods,
     rlang,
-    testthat,
-    BiocStyle,
     tidyselect,
-    magrittr
+    magrittr,
+    utils
 URL: https://github.com/eburns10/ECLIPSE
 biocViews: Software, GeneExpression, BiomedicalInformatics, ImmunoOncology, Transcriptomics, Classification, SingleCell, Annotation, Sequencing
 BugReports: https://github.com/eburns10/ECLIPSE/issues
@@ -34,6 +33,7 @@ Suggests:
     rmarkdown,
     ragg,
     tidyverse,
-    remotes
+    testthat,
+    BiocStyle
 VignetteBuilder: knitr
 RoxygenNote: 8.0.0

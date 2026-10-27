@@ -13,6 +13,14 @@ of their scTCR-seq data.
 Ethan C. Burns, Zhaochen Ye, Kelly Street, and David A. Braun
 
 ### Installation
+To install ECLIPSE from Bioconductor, please run:
+```{r, eval = FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("ECLIPSE")
+```
+
 To download the development version of ECLIPSE, please run:
 ```{r, eval = FALSE}
 remotes::install_github("eburns10/ECLIPSE")

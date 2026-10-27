@@ -1,0 +1,22 @@
+citHeader("To cite ECLIPSE, please use:")
+
+bibentry(
+    bibtype = "Article",
+    title = "VDJdive and ECLIPSE enhance single-cell T cell receptor sequencing analysis through the probabilistic resolution of ambiguous clonotypes",
+    author = c(
+        person("Ethan C.", "Burns"),
+        person("Mercedeh", "Movassagh"),
+        person("Jill F.", "Lundell"),
+        person("Mingzhi", "Ye"),
+        person("Zhaochen", "Ye"),
+        person("Giacomo", "Oliveira"),
+        person("Rishabh", "Rout"),
+        person("Miya B.", "Hugaboom"),
+        person("Kelly", "Street"),
+        person("David A.", "Braun")
+    ),
+    journal = "bioRxiv",
+    year = "2026",
+    doi = "10.64898/2026.02.18.706444",
+    url = "https://doi.org/10.64898/2026.02.18.706444"
+)
