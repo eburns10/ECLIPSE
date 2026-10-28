@@ -37,3 +37,4 @@ Suggests:
     BiocStyle
 VignetteBuilder: knitr
 RoxygenNote: 8.0.0
+LazyData: true

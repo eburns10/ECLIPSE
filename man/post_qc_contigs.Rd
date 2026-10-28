@@ -10,10 +10,12 @@ A data frame in the all_contig_annotations.csv format
 that is produced by cellranger vdj.
 }
 \source{
-Example data
+This is from 10 cells taken from Braun et al., Cancer Cell, 2021,
+with doi 10.1016/j.ccell.2021.02.013. Please view the README file in inst/ for
+more information. Code to reproduce this is available in inst/scripts/.
 }
 \usage{
-data(post_qc_contigs)
+post_qc_contigs
 }
 \description{
 Example Post-QC TCR contigs that would be generated within ECLIPSE
