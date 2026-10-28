@@ -20,10 +20,10 @@ tcrDoubletDetect(
 Default is TRUE.}
 
 \item{singleChainLimit}{number of alpha or beta chains that is allowed
-before filtering occurs. Must be a integer, with a default of 2.}
+before filtering occurs. Must be a whole number, with a default of 2.}
 
 \item{totalChainLimit}{number of total TCR chains that is allowed
-before filtering occurs. Must be an integer. Default is no threshold.}
+before filtering occurs. Must be a whole number. Default is no threshold.}
 
 \item{showPlots}{logical statement that determines whether plots
 are provided that help set additional filtering thresholds based on

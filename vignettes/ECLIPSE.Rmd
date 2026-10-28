@@ -19,7 +19,10 @@ abstract: |
   Seurat objects. Please refer to our 
   [pre-print](https://www.biorxiv.org/content/10.64898/2026.02.18.706444v1)
   for more details.
-output: BiocStyle::html_document
+output: 
+  BiocStyle::html_document:
+    toc: true
+    toc_depth: 3
 vignette: >
   %\VignetteIndexEntry{ECLIPSE}
   %\VignetteEngine{knitr::rmarkdown}
@@ -67,12 +70,24 @@ library(tidyverse) # needed for data wrangling (or use base R instead)
 library(scRepertoire) # needed for downstream analysis
 ```
 
-Please use the following code to download `ECLIPSE` from GitHub and load it:
+Please use the following code to download `ECLIPSE` from Bioconductor and load it:
 ```{r githubInstall, eval = FALSE}
-install_github("eburns10/ECLIPSE")
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("ECLIPSE")
 ```
 
 ```{r loadECLIPSE}
+library(ECLIPSE)
+```
+
+Alternatively, use the following code to download the devel version of `ECLIPSE` from GitHub and load it:
+```{r githubInstallDevel, eval = FALSE}
+install_github("eburns10/ECLIPSE")
+```
+
+```{r loadECLIPSEDevel}
 library(ECLIPSE)
 ```
 
@@ -88,7 +103,7 @@ https://doi.org/10.1016/j.ccell.2021.02.013)). Each patient has two samples:
 one from tumor tissue and one from matched adjacent normal tissue. To load the
 dataset in, we can use the following code:
 ```{r loadSeuratObject}
-data("vignette_object")
+data("vignette_object", package = "ECLIPSE")
 ```
 
 
@@ -186,7 +201,7 @@ contig_paths
 ```
 
 For example, `contig_paths[1]` holds a path for the TCR contigs for a cells
-from the tumor tissue of S15, so any cell from that sample must have 2 
+from the normal tissue of S15, so any cell from that sample must have 2 
 (integer) but not "2" (character) in this new column. We can make this column, 
 here called `index`, as such:
 ```{r makeBatchColumn}

@@ -16,12 +16,6 @@
 #'
 #' @importFrom rlang .data
 #'
-#' @importFrom testthat test_that expect_error expect_equal expect_true
-#'
-#' @importFrom testthat expect_lte
-#'
-#' @importFrom BiocStyle html_document
-#'
 #' @importFrom tidyselect all_of everything
 #'
 #' @importFrom dplyr arrange bind_rows case_when filter group_by left_join

@@ -7,9 +7,9 @@
 #' @param filter logical statement whether cells should be filtered or not.
 #' Default is TRUE.
 #' @param singleChainLimit number of alpha or beta chains that is allowed
-#' before filtering occurs. Must be a integer, with a default of 2.
+#' before filtering occurs. Must be a whole number, with a default of 2.
 #' @param totalChainLimit number of total TCR chains that is allowed
-#' before filtering occurs. Must be an integer. Default is no threshold.
+#' before filtering occurs. Must be a whole number. Default is no threshold.
 #' @param showPlots logical statement that determines whether plots
 #' are provided that help set additional filtering thresholds based on
 #' RNA counts and TCR chain count. Default is TRUE.
@@ -43,17 +43,17 @@ tcrDoubletDetect <- function(object,
         )
     }
 
-    if (!is.double(singleChainLimit) | !is.double(totalChainLimit)) {
+    if (!is.numeric(singleChainLimit) | !is.numeric(totalChainLimit)) {
         stop(
             "singleChainLimit and totalChainLimit both must be ",
-            "whole numbers of type double. Please try again."
+            "numbers. Please try again."
         )
     }
 
     if (singleChainLimit %% 1 != 0 | totalChainLimit %% 1 != 0) {
         stop(
             "singleChainLimit and totalChainLimit both must be ",
-            "whole numbers of type double. Please try again."
+            "whole numbers. Please try again."
         )
     }
 

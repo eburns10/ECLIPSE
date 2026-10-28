@@ -1,5 +1,5 @@
 Package: ECLIPSE
-Title: ECLIPSE: Enhanced CLonotypic Inference via Prediction of Single-cell Expression
+Title: Enhanced CLonotypic Inference via Prediction of Single-cell Expression
 Version: 0.99.0
 Authors@R: c(
     person("Ethan", "Burns", comment = c(ORCID = "0009-0009-8061-3686"), email = "ethan.burns@yale.edu", role = c("aut", "cre")),
