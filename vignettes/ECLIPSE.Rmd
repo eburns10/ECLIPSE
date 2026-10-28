@@ -63,9 +63,8 @@ for more details about this method.
 
 # Installation and loading
 
-We need to first load three packages to run the vignette:
+We need to first load two packages to run the vignette:
 ```{r loadLibraries, results = "hide", message = FALSE, warning = FALSE}
-library(remotes) # only needed to insall the package
 library(tidyverse) # needed for data wrangling (or use base R instead)
 library(scRepertoire) # needed for downstream analysis
 ```
@@ -84,7 +83,7 @@ library(ECLIPSE)
 
 Alternatively, use the following code to download the devel version of `ECLIPSE` from GitHub and load it:
 ```{r githubInstallDevel, eval = FALSE}
-install_github("eburns10/ECLIPSE")
+remotes::install_github("eburns10/ECLIPSE")
 ```
 
 ```{r loadECLIPSEDevel}
