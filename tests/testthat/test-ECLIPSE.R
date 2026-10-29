@@ -351,7 +351,7 @@ test_that("ECLIPSE returns a correctly formatted Seurat object", {
 
 test_that("findThreeChainClones accepts only valid inputs", {
     expect_error(
-        findThreeChainClones(post_qc_contigs[, 30:37],
+        findThreeChainClones(post_qc_contigs[, 30:34],
             chain = "a",
             mode = "standard",
             printStats = TRUE
