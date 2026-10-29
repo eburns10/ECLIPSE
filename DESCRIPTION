@@ -34,7 +34,9 @@ Suggests:
     ragg,
     tidyverse,
     testthat,
-    BiocStyle
+    BiocStyle,
+    Seurat,
+    SingleCellExperiment
 VignetteBuilder: knitr
 RoxygenNote: 8.0.0
 LazyData: true
